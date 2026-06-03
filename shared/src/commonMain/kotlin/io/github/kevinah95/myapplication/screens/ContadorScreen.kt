@@ -18,7 +18,11 @@ import androidx.compose.ui.unit.dp
 //             ¿Por qué ocurre esto? Agrega un comentario explicando el problema.
 @Composable
 fun ContadorScreen() {
-    var count = 0 // No funciona: ???
+    var count = 0
+    // No funciona porque count es una variable local normal.
+    // Cada vez que Compose recompone la pantalla, la función se ejecuta de nuevo y count vuelve a 0, por eso no se guarda el incremento
+
+
 
     Column(
         modifier = Modifier
